@@ -74,7 +74,7 @@ nav > span:hover {
   min-width: 800px;
   width: 1024px;
   height: 90vh;
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
 	-webkit-transform-origin: 50% 50%;
 	-moz-transform-origin: 50% 50%;
 	-ms-transform-origin: 50% 50%;

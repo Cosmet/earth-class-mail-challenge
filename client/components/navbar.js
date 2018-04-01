@@ -4,8 +4,19 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({ handleClick, isLoggedIn }) => (
+import {
+  fetchPlanets,
+  fetchSpaceships,
+  fetchVehicles,
+  fetchPeople,
+  fetchFilms,
+  fetchSpecies,
+} from '../store'
+
+
+const Navbar = ({ handleClick, isLoggedIn, fetchData }) => (
   <div>
+  {fetchData()}
     <h1>Star Wars</h1>
     <h2>Wikipedia</h2>
     <nav>
@@ -32,6 +43,14 @@ const mapDispatch = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
+    },
+    fetchData() {
+      dispatch(fetchPlanets());
+      dispatch(fetchSpaceships());
+      dispatch(fetchVehicles());
+      dispatch(fetchPeople());
+      dispatch(fetchFilms());
+      dispatch(fetchSpecies());
     }
   }
 }
