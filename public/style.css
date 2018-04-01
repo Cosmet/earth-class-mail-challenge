@@ -1,5 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 body {
-  font-family: sans-serif;
+  margin: 0;
+  background-color: #222;
+  font-family: 'Droid Sans', sans-serif;
+  color: #ff6;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
 }
 
 a {
@@ -10,12 +20,69 @@ label {
   display: block;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
+h1, h2 {
+  text-align: center;
+  line-height: 0.8em;
+	letter-spacing: -0.05em;
+	color: #222;
+  text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+  margin: 0.2em;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
+h1 {
+  font-size: 7em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+nav {
+  margin-top: 2em;
+  padding-bottom: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px dotted #ff6;
+}
+
+nav > span {
+  border: 1px solid #ff6;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+nav > span:hover {
+  background: #ff6;
+  color: #222;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#angled-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 800px;
+  width: 1024px;
+  height: 90vh;
+  border: 1px dotted red;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-transform: perspective(300px) rotateX(5deg);
+	-moz-transform: perspective(300px) rotateX(5deg);
+	-ms-transform: perspective(300px) rotateX(5deg);
+	-o-transform: perspective(300px) rotateX(5deg);
+	transform: perspective(300px) rotateX(5deg);
 }
