@@ -37,8 +37,7 @@ const Navbar = (props) => {
  */
 const mapState = state => {
   return {
-    planets: state.planets,
-    filter: state.filter,
+    planets: state.planets
   }
 }
 

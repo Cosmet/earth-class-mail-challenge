@@ -9,6 +9,7 @@ import vehicles from './vehicles';
 import people from './people';
 import films from './films';
 import species from './species';
+import selectors from './selectors';
 
 const reducer = combineReducers({
   planets,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   people,
   films,
   species,
+  selectors,
 });
 
 const middleware = composeWithDevTools(applyMiddleware(
@@ -33,3 +35,4 @@ export * from './vehicles';
 export * from './people';
 export * from './films';
 export * from './species';
+export * from './selectors';

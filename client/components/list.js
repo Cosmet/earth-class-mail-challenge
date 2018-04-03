@@ -2,29 +2,35 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
 
+import { setSelectors } from '../store';
 import { ListItem } from './';
 
-class List extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { props } = this;
+const List = props => {
     const { type } = props.match.params;
     const query = new URLSearchParams(props.location.search);
-    const { filter, sortData } = props;
+    const { selectors, sortData, selectItem } = props;
     const order = query.get('order') || 'ASC';
     const items = sortData({ type, data: props[type], order });
 
     return (
       <div className="list-container">
         {
-          items.map((item, idx) => <ListItem key={idx} type={type} data={item} />)
+          items.map((item, idx) => (
+            <ListItem
+              key={idx}
+              type={type}
+              data={item}
+              selector={selectItem}
+              selected={
+                type === 'films'
+                  ? selectors.selectedItem === item.title
+                  : selectors.selectedItem === item.name
+              }
+            />
+          ))
         }
       </div>
     )
-  }
 }
 
 /**
@@ -38,6 +44,7 @@ const mapState = state => {
     vehicles: state.vehicles,
     films: state.films,
     people: state.people,
+    selectors: state.selectors,
   }
 }
 
@@ -52,6 +59,9 @@ const mapDispatch = dispatch => {
       });
       return sortedData;
     },
+    selectItem(selectedItem) {
+      dispatch(setSelectors({ selectedItem }))
+    }
   }
 }
 
