@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter, Link } from 'react-router-dom'
 
 import { ListItem } from './';
 
@@ -12,7 +12,10 @@ class List extends Component {
   render() {
     const { props } = this;
     const { type } = props.match.params;
-    const items = props[type];
+    const query = new URLSearchParams(props.location.search);
+    const { filter, sortData } = props;
+    const order = query.get('order') || 'ASC';
+    const items = sortData({ type, data: props[type], order });
 
     return (
       <div className="list-container">
@@ -40,7 +43,15 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-
+    sortData({ type, data, order = 'ASC' }) {
+      const dataKey = type !== 'films' ? 'name' : 'title';
+      const sortedData = data.sort((a, b) => {
+        return order === 'ASC'
+          ? a[dataKey].localeCompare(b[dataKey]) // Ascending
+          : b[dataKey].localeCompare(a[dataKey]) // Descending
+      });
+      return sortedData;
+    },
   }
 }
 

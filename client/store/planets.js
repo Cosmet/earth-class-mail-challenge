@@ -1,10 +1,10 @@
 import axios from 'axios'
-import {recursiveApiFetch} from '../lib';
+import { recursiveApiFetch } from '../lib';
 
 /**
  * ACTION TYPES
  */
-const GET_PLANETS = 'GET_PLANETS'
+const SET_PLANETS = 'SET_PLANETS';
 
 /**
  * INITIAL STATE
@@ -14,7 +14,8 @@ const defaultPlanets = []
 /**
  * ACTION CREATORS
  */
-const getPlanets = planets => ({ type: GET_PLANETS, planets })
+const setPlanets = planets =>
+  ({ type: SET_PLANETS, planets });
 
 /**
  * THUNK CREATORS
@@ -26,7 +27,7 @@ export const fetchPlanets = () =>
       dispatch,
       type: 'planets',
       defaultState: defaultPlanets,
-      actionCreator: getPlanets,
+      actionCreator: setPlanets,
     });
   }
 
@@ -35,8 +36,8 @@ export const fetchPlanets = () =>
  */
 export default function (state = defaultPlanets, action) {
   switch (action.type) {
-    case GET_PLANETS:
-      return action.planets
+    case SET_PLANETS:
+      return action.planets;
     default:
       return state
   }
