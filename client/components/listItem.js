@@ -2,11 +2,19 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-const ListItem = () => (
-  <div>
-
-  </div>
-)
+const ListItem = (props) => {
+  const { type, data } = props;
+  console.log(data)
+  return (
+    <div className='list-item'>
+    {
+      type === 'films'
+        ? <span>{data.title}</span>
+        : <span>{data.name}</span>
+    }
+    </div>
+  )
+}
 
 /**
  * CONTAINER

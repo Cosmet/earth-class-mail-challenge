@@ -4,7 +4,7 @@ body {
   margin: 0;
   background-color: #222;
   font-family: 'Droid Sans', sans-serif;
-  color: #ff6;
+  color: #FCE752;
 }
 
 canvas {
@@ -20,21 +20,25 @@ label {
   display: block;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
   line-height: 0.8em;
 	letter-spacing: -0.05em;
-	color: #222;
-  text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+  color: #222;
+  font-size: 7em;
+  text-shadow:
+    -2px -2px 0 #FCE752,
+    2px -2px 0 #FCE752,
+    -2px 2px 0 #FCE752,
+    2px 2px 0 #FCE752;
   margin: 0.2em;
 }
 
-h1 {
-  font-size: 7em;
-}
-
 h2 {
+  text-align: center;
   font-size: 1.5em;
+  text-shadow: none;
+  color: #FCE752;
 }
 
 nav {
@@ -45,14 +49,15 @@ nav {
   border-bottom: 1px dotted #ff6;
 }
 
-nav > span {
+nav > a {
   border: 1px solid #ff6;
   border-radius: 5px;
   padding: 1rem 2rem;
+  color: inherit;
 }
 
-nav > span:hover {
-  background: #ff6;
+nav > a:hover {
+  background: #FCE752;
   color: #222;
 }
 
@@ -73,16 +78,31 @@ nav > span:hover {
   margin-right: auto;
   min-width: 800px;
   width: 1024px;
-  height: 90vh;
-  /* border: 1px dotted red; */
+  height: 85vh;
+  overflow: scroll;
 	-webkit-transform-origin: 50% 50%;
 	-moz-transform-origin: 50% 50%;
 	-ms-transform-origin: 50% 50%;
 	-o-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
-	-webkit-transform: perspective(300px) rotateX(5deg);
-	-moz-transform: perspective(300px) rotateX(5deg);
-	-ms-transform: perspective(300px) rotateX(5deg);
-	-o-transform: perspective(300px) rotateX(5deg);
-	transform: perspective(300px) rotateX(5deg);
+	-webkit-transform: perspective(300px) rotateX(10deg);
+	-moz-transform: perspective(300px) rotateX(10deg);
+	-ms-transform: perspective(300px) rotateX(10deg);
+	-o-transform: perspective(300px) rotateX(10deg);
+	transform: perspective(300px) rotateX(10deg);
 }
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.list-item {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem;
+  width: 50%;
+}
+

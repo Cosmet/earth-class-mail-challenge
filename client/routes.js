@@ -2,8 +2,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome} from './components'
-import {me} from './store'
+import {List} from './components'
+import {
+  fetchPlanets,
+  fetchSpaceships,
+  fetchVehicles,
+  fetchPeople,
+  fetchFilms,
+  fetchSpecies,
+} from './store'
 
 /**
  * COMPONENT
@@ -18,7 +25,7 @@ class Routes extends Component {
 
     return (
       <Switch>
-
+        <Route exact path="/:type" component={List}/>
       </Switch>
     )
   }
@@ -38,7 +45,12 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
-      dispatch(me())
+      dispatch(fetchPlanets());
+      dispatch(fetchSpaceships());
+      dispatch(fetchVehicles());
+      dispatch(fetchPeople());
+      dispatch(fetchFilms());
+      dispatch(fetchSpecies());
     }
   }
 }
