@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const ListItem = (props) => {
   const { type, data } = props;
-  console.log(data)
+
   return (
     <div className='list-item'>
     {

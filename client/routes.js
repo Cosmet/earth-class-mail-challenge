@@ -21,7 +21,6 @@ class Routes extends Component {
   }
 
   render () {
-    const {isLoggedIn} = this.props
 
     return (
       <Switch>
@@ -36,9 +35,7 @@ class Routes extends Component {
  */
 const mapState = (state) => {
   return {
-    // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
-    // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+
   }
 }
 
@@ -63,6 +60,5 @@ export default withRouter(connect(mapState, mapDispatch)(Routes))
  * PROP TYPES
  */
 Routes.propTypes = {
-  loadInitialData: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+
 }
