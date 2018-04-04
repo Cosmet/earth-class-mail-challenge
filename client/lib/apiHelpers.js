@@ -8,9 +8,6 @@ import {
   setFilms,
 } from '../store';
 
-console.log(setPeople)
-
-
 const DATA_SETS = [
   {type: 'people', actionCreator: setPeople},
   {type: 'planets', actionCreator: setPlanets},
