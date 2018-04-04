@@ -7,6 +7,10 @@ body {
   color: #FCE752;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 canvas {
   display: block;
   vertical-align: bottom;
