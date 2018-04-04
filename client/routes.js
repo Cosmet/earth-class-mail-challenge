@@ -3,14 +3,8 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {List} from './components'
-import {
-  fetchPlanets,
-  fetchSpaceships,
-  fetchVehicles,
-  fetchPeople,
-  fetchFilms,
-  fetchSpecies,
-} from './store'
+
+import { getAllData } from './lib';
 
 /**
  * COMPONENT
@@ -35,19 +29,13 @@ class Routes extends Component {
  */
 const mapState = (state) => {
   return {
-
   }
 }
 
 const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
-      dispatch(fetchPlanets());
-      dispatch(fetchSpaceships());
-      dispatch(fetchVehicles());
-      dispatch(fetchPeople());
-      dispatch(fetchFilms());
-      dispatch(fetchSpecies());
+      getAllData(dispatch);
     }
   }
 }

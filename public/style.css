@@ -129,8 +129,8 @@ nav > a:hover {
 }
 
 
-.list-item > a {
-  color: inherit;
+.list-item > span {
+  cursor: pointer;
 }
 
 .details {
