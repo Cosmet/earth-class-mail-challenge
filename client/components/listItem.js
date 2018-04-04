@@ -28,7 +28,7 @@ const ListItem = (props) => {
           keys.map(key => {
             const convertedKey = convertToTitle(key);
             return (
-              <span key={key}>{convertedKey}: {data[key].length ? data[key] : 'none'}</span>
+              <span key={key}>{convertedKey}: {data[key] && data[key].length ? data[key] : 'none'}</span>
             )
           })
         }
