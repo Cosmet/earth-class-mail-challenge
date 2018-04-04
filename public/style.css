@@ -71,7 +71,7 @@ nav > a:hover {
 }
 
 .option-container > * {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0 0.2rem;
 }
 
@@ -120,16 +120,16 @@ nav > a:hover {
 
 .list-item {
   font-size: 2rem;
-  line-height: 2.5rem;
+  line-height: 3rem;
   text-align: center;
   margin: 1rem;
   width: 70%;
-  transition: all .17s ease-in-out;
 }
 
 .list-item:hover > span {
   font-size: 2.5rem;
   font-weight: bold;
+  transition: all .2s ease-in-out;
 }
 
 
