@@ -97,8 +97,6 @@ export const recursiveApiFetch = (dispatch, { type, actionCreator }) => {
 
 export const getAllData = dispatch => {
   const allDataSets = DATA_SETS.map(set => recursiveApiFetch(dispatch, set));
-  console.log(DATA_SETS)
-
   Promise.all(allDataSets)
     .then(combineData)
     .then(combinedResults => {
